@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* Standalone output: a self-contained server bundle for Docker/Fly/Render.
+     Vercel ignores this and uses its own builder output. */
+  output: "standalone",
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {

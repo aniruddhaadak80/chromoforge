@@ -23,7 +23,7 @@ updates:
       interval: monthly
     labels: [rust]
   - package-ecosystem: pip
-    directory: "/services/agents"
+    directory: "/python/agents"
     schedule:
       interval: monthly
     labels: [python]

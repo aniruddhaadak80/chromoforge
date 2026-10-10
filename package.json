@@ -4,29 +4,53 @@
   "private": true,
   "description": "Design life for worlds we know exist — a synthetic-biology foundry for real exoplanets.",
   "workspaces": [
-    "apps/*",
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo run dev",
-    "build": "turbo run build",
-    "start": "turbo run start",
-    "lint": "turbo run lint",
-    "typecheck": "turbo run typecheck",
-    "test": "turbo run test",
-    "test:watch": "turbo run test:watch",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "agents:test": "cd python/agents && python -m pytest tests -q",
+    "rust:check": "cargo check --tests --manifest-path crates/ecology/Cargo.toml",
+    "parity": "sh bin/parity.sh",
     "sim:batch": "cargo run --release --manifest-path crates/ecology/Cargo.toml",
     "loc": "node scripts/loc-count.mjs",
     "loc:gate": "node scripts/loc-count.mjs --min-lines 100000",
     "gen:assets": "node scripts/gen-assets.mjs",
-    "db:seed": "bun scripts/seed.ts",
-    "agents:dev": "python -m uvicorn services.agents.main:app --reload --port 8787"
+    "agents:dev": "cd python/agents && python -m uvicorn main:app --reload --port 8787"
+  },
+  "dependencies": {
+    "@repo/core": "workspace:*",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "lucide-react": "^0.469.0",
+    "next": "16.4.0",
+    "next-themes": "^0.4.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "recharts": "^2.15.0",
+    "tailwind-merge": "^3.0.1",
+    "zod": "^3.25.76",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
-    "@types/node": "^22.10.0",
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.49.1",
+    "@repo/config": "workspace:*",
+    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/turbopack": "^4.3.3",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.0",
+    "tailwindcss": "^4",
     "turbo": "^2.5.4",
-    "typescript": "^5.7.3",
-    "vitest": "^3.0.5"
+    "typescript": "^5"
   },
   "packageManager": "bun@1.3.14"
 }

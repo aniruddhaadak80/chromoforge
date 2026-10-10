@@ -7,4 +7,4 @@
    GitHub Release. Review, add highlights, publish.
 5. Confirm the live URL matches the tag (deploy-vercel.yml runs on the tag push).
 6. Announce: the DEV post template lives in the maintainer's blog workspace; link the release,
-   the live URL, and one screenshot from `apps/web/public/images/screens/`.
+   the live URL, and one screenshot from `public/images/screens/`.

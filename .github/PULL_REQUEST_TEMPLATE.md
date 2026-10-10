@@ -5,7 +5,7 @@ One sentence: what this changes.
 ## Why
 
 The tradeoff or bug this buys/fixes. If it changes behavior that has a fixture
-(`services/agents/parity/fixtures.json`), say which engine and why.
+(`python/agents/parity/fixtures.json`), say which engine and why.
 
 ## How to test
 

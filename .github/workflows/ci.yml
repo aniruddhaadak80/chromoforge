@@ -25,10 +25,8 @@ jobs:
       - run: bun run build
       - run: bunx playwright install --with-deps chromium
       - run: bunx playwright test
-        env:
-          E2E_BASE_URL: http://localhost:3000
 
-  core-parity:
+  rust-parity:
     name: rust reference engine
     runs-on: ubuntu-latest
     steps:
@@ -37,8 +35,8 @@ jobs:
       - name: cargo test (rust engine)
         run: cargo test --manifest-path crates/ecology/Cargo.toml
 
-  python-service:
-    name: python service + parity
+  python-parity:
+    name: python service + cross-language parity
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -51,7 +49,7 @@ jobs:
       - run: bun install --frozen-lockfile
       - run: bun packages/core/scripts/gen-vectors.ts
       - run: pip install -r python/agents/requirements.txt
-      - run: python -m pytest python/agents/tests -q
+      - run: cd python/agents && python -m pytest tests -q
       - run: cargo test --manifest-path crates/ecology/Cargo.toml
       - run: cd python/agents && python -m parity.run_parity --rust
 

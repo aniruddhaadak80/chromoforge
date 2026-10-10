@@ -13,7 +13,7 @@ manager's laptop, three years later when the key rotates. This repo's job is to 
 Every "AI" behavior is a deterministic finite-state simulation: `packages/core/agents/crew.ts`
 implements the crew with rubric-driven templates and seeded phrasing. No network calls exist in
 the runtime path. Data is a curated offline seed of the NASA Exoplanet Archive
-(`services/agents/data/fetch_catalog.py` is the optional refresh path).
+(`python/agents/data/fetch_catalog.py` is the optional refresh path).
 
 ## Consequences
 

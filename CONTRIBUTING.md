@@ -43,7 +43,7 @@ bin/parity.sh                                                  # regenerate fixt
 ## Layout
 
 ```
-apps/web/       Next.js 16 app — pages, API routes, components
+       Next.js 16 app — pages, API routes, components
 packages/core   pure domain logic (genetics, exoplanets, ecology, agents)
 crates/ecology  Rust reference engine (parity oracle)
 python/agents Python service + parity harness + catalog fetcher

@@ -2,6 +2,7 @@ import { z } from "zod";
 import { simulate, getExoplanet } from "@repo/core";
 import type { GenerationPoint } from "@repo/core";
 import { jsonError, jsonOk } from "@/lib/api-helpers";
+import { issuesOf } from "@/lib/zod-issues";
 
 const bodySchema = z.object({
   slots: z.array(z.object({ partId: z.string().min(1), copies: z.number().int().min(1).max(3) })).min(1),
@@ -19,7 +20,7 @@ export async function POST(request: Request) {
   try {
     parsed = bodySchema.parse(await request.json());
   } catch (err) {
-    return jsonError(400, "invalid_request", "Request body failed validation.", z.treeifyError(err as z.ZodError));
+    return jsonError(400, "invalid_request", "Request body failed validation.", issuesOf(err));
   }
   let planet;
   try {

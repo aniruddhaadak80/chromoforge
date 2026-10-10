@@ -6,7 +6,7 @@ services:
     plan: starter
     region: singapore
     buildCommand: bun install --frozen-lockfile && bun run build
-    startCommand: bun apps/web/.next/standalone/apps/web/server.js
+    startCommand: bun server.js
     healthCheckPath: /
     envVars:
       - key: NODE_ENV

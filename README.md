@@ -7,7 +7,7 @@ stack: Next.js 16 · React 19 · TypeScript strict · Tailwind v4 · Rust · Pyt
 ---
 
 <div align="center">
-  <img src="apps/web/public/images/banner.svg" alt="chromoforge banner" width="100%">
+  <img src="public/images/banner.svg" alt="chromoforge banner" width="100%">
   <h1>chromoforge — design life for worlds we know exist</h1>
   <p>A synthetic-biology foundry: compose a genome, screen it through a published biosafety policy, then release it into a real exoplanet and let the generations decide.</p>
   <p>

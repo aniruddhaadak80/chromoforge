@@ -4,7 +4,7 @@
  * Values are the published confirmed parameters, rounded for legibility.
  * Coordinates are J2000 equatorial (degrees), suitable for the Hammer
  * projection in `projection.ts`. Regenerate the deeper metadata with
- * `services/agents/data/fetch_catalog.py` (documented in docs/guides/data.md);
+ * `python/agents/data/fetch_catalog.py` (documented in docs/guides/data.md);
  * this seed keeps the demo and the test suite fully offline.
  */
 

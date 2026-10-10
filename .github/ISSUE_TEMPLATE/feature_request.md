@@ -13,7 +13,7 @@ chromoforge argues that *constraints* make synthetic biology interesting. How do
 add a real tradeoff rather than a bigger stack?
 
 **Where it would live**
-Which page/module (`apps/web/app/...`, `packages/core/...`, `crates/...`)?
+Which page/module (`app/...`, `packages/core/...`, `crates/...`)?
 
 **Risks**
 Does it touch the biosecurity policy, the parity contract, or the offline-first rule? If yes,

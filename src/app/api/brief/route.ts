@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { briefCrew } from "@repo/core";
 import { jsonError, jsonOk } from "@/lib/api-helpers";
+import { issuesOf } from "@/lib/zod-issues";
 
 const bodySchema = z.object({
   seed: z.string().min(1).max(120),
@@ -17,7 +18,7 @@ export async function POST(request: Request) {
   try {
     parsed = bodySchema.parse(await request.json());
   } catch (err) {
-    return jsonError(400, "invalid_request", "Request body failed validation.", z.treeifyError(err as z.ZodError));
+    return jsonError(400, "invalid_request", "Request body failed validation.", issuesOf(err));
   }
   const briefing = briefCrew(parsed);
   return jsonOk(briefing);

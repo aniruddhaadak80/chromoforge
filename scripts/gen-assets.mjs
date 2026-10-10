@@ -214,29 +214,29 @@ ${panels}`;
 }
 
 const SCREENS = {
-  landing: (rng) => [
+  landing: () => [
     { w: 752, h: 96, kind: "rows", title: "hero", items: [1, 0.7, 0.85] },
     { w: 752, h: 150, kind: "bars", title: "featured worlds", items: [0.6, 0.85, 0.45, 0.72] },
     { w: 752, h: 120, kind: "rows", title: "capabilities", items: [0.9, 0.6, 0.75, 0.5] },
   ],
-  composer: (rng) => [
+  composer: () => [
     { w: 240, h: 340, kind: "rows", title: "part shelf", items: [0.9, 0.7, 0.8, 0.5, 0.65, 0.4] },
     { w: 500, h: 200, kind: "bars", title: "derived phenotype", items: [0.55, 0.3, 0.62, 0.2, 0.8] },
     { w: 500, h: 120, kind: "terminal", title: "policy engine", lines: ["> verdict: allow", "> risk index 0.00", "> upkeep 18"] },
   ],
-  theater: (rng) => [
+  theater: () => [
     { w: 752, h: 220, kind: "chart", title: "population & fitness" },
     { w: 752, h: 110, kind: "rows", title: "event log", items: [0.8, 0.6, 0.9] },
   ],
-  atlas: (rng) => [
+  atlas: () => [
     { w: 500, h: 340, kind: "sky", title: "hammer projection" },
     { w: 240, h: 340, kind: "rows", title: "worlds", items: [0.9, 0.8, 0.6, 0.7, 0.5, 0.65, 0.4] },
   ],
-  safety: (rng) => [
+  safety: () => [
     { w: 752, h: 110, kind: "terminal", title: "verdict", lines: ["> verdict: block", "> BS-01 toxin + transmission chassis"] },
     { w: 752, h: 220, kind: "rows", title: "findings", items: [0.85, 0.6, 0.75] },
   ],
-  release: (rng) => [
+  release: () => [
     { w: 240, h: 340, kind: "bars", title: "predicted fitness", items: [0.62] },
     { w: 500, h: 200, kind: "terminal", title: "crew briefing", lines: ["NAVA  transit window 4 sols", "XYLO  fitness 62%", "ETHOS conditions: containment"] },
     { w: 500, h: 120, kind: "rows", title: "conditions", items: [0.7, 0.5, 0.6] },
