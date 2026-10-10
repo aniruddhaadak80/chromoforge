@@ -1,0 +1,17 @@
+%% Infrastructure and network boundaries.
+flowchart TB
+    User["Visitor"] -->|HTTPS| Edge["Vercel Edge<br/>chromoforge"]
+    Edge --> SSR["Next.js SSR<br/>(nodejs runtime)"]
+    Edge --> OG["/og dynamic image<br/>next/og ImageResponse"]
+    SSR --> Static["Plerendered static pages"]
+    SSR --> API["Route handlers<br/>/api/*"]
+    subgraph docker["Docker Compose (self-host path)"]
+        Web["web:3000"]
+        Agents["agents:8787<br/>FastAPI"]
+    end
+    Agents -->|"batch simulate / brief"| Web
+    subgraph alt["Alternatives"]
+        Fly["Fly.io machines"]
+        Render["Render web service"]
+        Railway["Railway"]
+    end

@@ -1,0 +1,66 @@
+name: ci
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  web:
+    name: web (typecheck · lint · test · e2e · build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+      - run: bun install --frozen-lockfile
+      - run: bun run typecheck
+      - run: bun run lint
+      - run: bun run test
+      - run: bun run build
+      - run: bunx playwright install --with-deps chromium
+      - run: bunx playwright test
+        env:
+          E2E_BASE_URL: http://localhost:3000
+
+  core-parity:
+    name: rust reference engine
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: cargo test (rust engine)
+        run: cargo test --manifest-path crates/ecology/Cargo.toml
+
+  python-service:
+    name: python service + parity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+      - run: bun install --frozen-lockfile
+      - run: bun packages/core/scripts/gen-vectors.ts
+      - run: pip install -r services/agents/requirements.txt
+      - run: python -m pytest services/agents/tests -q
+      - run: cargo test --manifest-path crates/ecology/Cargo.toml
+      - run: cd services/agents && python -m parity.run_parity --rust
+
+  scale:
+    name: scale report
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+      - run: node scripts/loc-count.mjs

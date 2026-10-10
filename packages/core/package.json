@@ -1,0 +1,33 @@
+{
+  "name": "@repo/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Domain logic for chromoforge: genetics, biosecurity, exoplanets, ecology simulation, agent crew.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./genetics": "./src/genetics/index.ts",
+    "./exoplanets": "./src/exoplanets/index.ts",
+    "./ecology": "./src/ecology/index.ts",
+    "./agents": "./src/agents/index.ts",
+    "./util": "./src/util/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9",
+    "@repo/config": "workspace:*",
+    "@types/node": "^22.10.0",
+    "eslint": "^9",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8",
+    "vitest": "^3.0.5"
+  }
+}

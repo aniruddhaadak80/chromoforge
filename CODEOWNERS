@@ -1,0 +1,8 @@
+# Everything defaults to the maintainer; policy changes get a second pair of eyes.
+*               @aniruddhaadak80
+
+# The gate, the science, and the engines deserve review discipline.
+packages/core/src/genetics/biosecurity.ts    @aniruddhaadak80
+docs/guides/the-science.md                   @aniruddhaadak80
+services/agents/parity/                      @aniruddhaadak80
+crates/ecology/src/lib.rs                    @aniruddhaadak80

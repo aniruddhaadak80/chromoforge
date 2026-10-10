@@ -1,0 +1,11 @@
+%% CI/CD & deployment pipeline.
+flowchart LR
+    Dev["local: bun dev"] -->|commit| PR["pull request"]
+    PR --> CI["ci.yml<br/>typecheck · lint · test · e2e · build"]
+    CI -->|"cargo check --tests"| RustCrate["crates/ecology"]
+    CI -->|pytest| PyService["services/agents"]
+    CI -->|green| Merge["merge to main"]
+    Merge --> Release["release.yml<br/>tag → GitHub Release"]
+    Merge --> Vercel["deploy-vercel.yml<br/>vercel --prod"]
+    Vercel --> URL["live URL<br/>vercel.app"]
+    Merge --> Alt["Fly / Render / Railway<br/>(configs in repo)"]

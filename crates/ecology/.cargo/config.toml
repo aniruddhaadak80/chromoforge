@@ -1,0 +1,13 @@
+# Linking this crate on Windows without MSVC
+#
+# The reference engine is pure Rust with zero dependencies, so `cargo check`
+# (and `cargo check --tests`) works with rustc alone. Building the *binary*
+# needs a system linker:
+#
+#   * Windows + Visual Studio Build Tools  -> works out of the box
+#   * Linux / macOS                        -> works out of the box (CI target)
+#   * Windows WITHOUT Build Tools          -> only `cargo check --tests` runs;
+#     MSVC-style TLS (`_tls_used`) cannot be satisfied by the mingw import
+#     libraries, and we refuse to ship fake C-runtime stubs for it.
+#
+# CI (GitHub Actions, ubuntu-latest) runs the full `cargo test`.

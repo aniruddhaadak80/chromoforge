@@ -1,0 +1,13 @@
+[package]
+name = "ecology"
+version = "0.1.0"
+edition = "2021"
+description = "Reference implementation of the chromoforge ecology simulation — parity oracle for the TypeScript engine in packages/core."
+license = "MIT"
+
+# Zero dependencies: no serde, no build scripts, no C toolchain required.
+# `cargo test` works anywhere rustc does.
+
+[[bin]]
+name = "ecology"
+path = "src/main.rs"

@@ -1,0 +1,29 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: saturday
+    open-pull-requests-limit: 5
+    labels: [dependencies]
+    groups:
+      next-ecosystem:
+        patterns: ["next", "next-*", "react", "react-dom", "@types/react*"]
+      testing:
+        patterns: ["vitest", "@playwright/test", "playwright*", "@axe-core/*"]
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    labels: [ci]
+  - package-ecosystem: cargo
+    directory: "/crates/ecology"
+    schedule:
+      interval: monthly
+    labels: [rust]
+  - package-ecosystem: pip
+    directory: "/services/agents"
+    schedule:
+      interval: monthly
+    labels: [python]

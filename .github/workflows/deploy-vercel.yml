@@ -1,0 +1,33 @@
+name: deploy-vercel
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          bunx vercel pull --yes --environment=production --token "$VERCEL_TOKEN"
+          bunx vercel build --prod --token "$VERCEL_TOKEN"
+          bunx vercel deploy --prebuilt --prod --token "$VERCEL_TOKEN"
+      - name: Verify the live URL responds
+        run: |
+          URL="https://chromoforge.vercel.app"
+          curl -sI "$URL" | head -1
+          curl -s "$URL" | grep -c chromoforge

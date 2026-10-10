@@ -1,0 +1,52 @@
+%% Domain model — mirrors the seeded catalog and the foundry bench.
+erDiagram
+    GENOME ||--|{ GENOME_SLOT : "assembled from"
+    PART ||--o{ GENOME_SLOT : "instantiated as"
+    GENOME ||--o| TRAIT_VECTOR : "derives"
+    EXOPLANET ||--|| ENVIRONMENT : "derives"
+    GENOME ||--o| BIOSAFETY_REPORT : "screened into"
+    CREW ||--o{ BRIEFING : "produces"
+    SIMULATION ||--|| GENOME : "runs"
+    SIMULATION ||--|| ENVIRONMENT : "against"
+
+    GENOME {
+        string id
+        string name
+        string chassis
+    }
+    GENOME_SLOT {
+        string partId
+        int copies
+    }
+    PART {
+        string id
+        string kind "promoter|orf|terminator|regulatory"
+        string sequence
+        int upkeep
+        bool regulated
+    }
+    TRAIT_VECTOR {
+        float thermotolerance
+        float radioresistance
+        float photosyntheticEfficiency
+        float metabolicRate
+    }
+    EXOPLANET {
+        string id
+        string hostStar
+        float massEarth
+        float radiusEarth
+        float insolation
+        float distanceLy
+    }
+    ENVIRONMENT {
+        float tempK
+        float gravity
+        float radiationIndex
+        float water
+        string regime
+    }
+    BIOSAFETY_REPORT {
+        string verdict "allow|review|block"
+        float riskIndex
+    }

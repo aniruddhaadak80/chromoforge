@@ -1,0 +1,16 @@
+%% Branching strategy — trunk-based with release tags.
+gitGraph
+    commit id: "init"
+    branch develop
+    checkout develop
+    commit id: "feat: composer"
+    commit id: "feat: policy gate"
+    checkout main
+    merge develop tag: "v0.1.0"
+    branch feature/sky-atlas
+    checkout feature/sky-atlas
+    commit id: "feat: hammer projection"
+    checkout develop
+    merge feature/sky-atlas
+    checkout main
+    merge develop tag: "v0.2.0"

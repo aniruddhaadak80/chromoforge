@@ -1,0 +1,50 @@
+%% Domain classes — the core abstractions.
+classDiagram
+    class Genome {
+        +string id
+        +string name
+        +string chassis
+        +GenomeSlot[] slots
+        +deriveTraits() TraitVector
+        +upkeep() number
+    }
+    class Part {
+        +string id
+        +PartKind kind
+        +string sequence
+        +TraitEffect[] effects
+        +number upkeep
+    }
+    class TraitVector {
+        +number thermotolerance
+        +number radioresistance
+        +number photosyntheticEfficiency
+    }
+    class Exoplanet {
+        +string id
+        +float massEarth
+        +float insolation
+    }
+    class EnvironmentProfile {
+        +float tempK
+        +float radiationIndex
+        +float water
+    }
+    class BiosafetyReport {
+        +Verdict verdict
+        +Finding[] findings
+        +float riskIndex
+    }
+    class SimResult {
+        +GenerationPoint[] history
+        +Outcome outcome
+        +number peakPopulation
+    }
+
+    Genome "1" *-- "many" GenomeSlot
+    GenomeSlot --> Part
+    Genome ..> TraitVector
+    Genome ..> BiosafetyReport
+    Genome ..> SimResult
+    Exoplanet ..> EnvironmentProfile
+    SimResult --> EnvironmentProfile

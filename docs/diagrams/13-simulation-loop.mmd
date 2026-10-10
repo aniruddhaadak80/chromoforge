@@ -1,0 +1,12 @@
+%% The simulation loop — one generation, spelled out.
+flowchart TD
+    Start([generation g]) --> Alive{population < 1?}
+    Alive -->|yes| Extinct([extinct: push terminal point])
+    Alive -->|no| Fitness["fitness = match(traits, env)<br/>× (1 − upkeep burden)"]
+    Fitness --> Grow["population += round(r × pop × (1 − pop/K))<br/>r = max(0, (fitness − 0.25) × 3.2)"]
+    Grow --> Events{"scene-setting events<br/>(radiation sweep, dormancy, mutation)"}
+    Events --> Record["record GenerationPoint<br/>{gen, population, meanFitness, events}"]
+    Record --> Select["selection: traits drift toward env demand<br/>+ seeded gaussian mutation × mutationStdDev"]
+    Select --> Stagnant{fitness < 0.28<br/>six generations running?}
+    Stagnant -->|no| Next([generation g+1])
+    Stagnant -->|yes| Fade(["extinct: sustained sub-lethal fitness"])

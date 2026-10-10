@@ -1,0 +1,23 @@
+%% Core request flow: designing guides behind the policy gate.
+sequenceDiagram
+    autonumber
+    actor User as Bench scientist
+    participant UI as Composer UI
+    participant Core as packages/core
+    participant Policy as Biosecurity engine
+    participant API as /api/guides
+
+    User->>UI: add gene cassette (orfCry ×2)
+    UI->>Core: deriveTraits(genome)
+    Core-->>UI: TraitVector (saturation applied)
+    UI->>Policy: evaluateBiosafety(genome)
+    Policy-->>UI: verdict=block (BS-01) + findings
+    UI->>User: gate locked, remediation shown
+    User->>UI: remove orfAero → re-evaluate
+    UI->>Core: evaluateBiosafety(genome)
+    Core-->>UI: verdict=allow
+    User->>API: POST /api/guides { target: orfHsp }
+    API->>Core: designGuides(genome, "orfHsp", 5)
+    Core->>Core: scan assembled sequence for off-targets
+    Core-->>API: ranked GuideCandidate[]
+    API-->>User: 200 { ok: true, data: { guides } }

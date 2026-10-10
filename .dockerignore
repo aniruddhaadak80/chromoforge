@@ -1,0 +1,14 @@
+node_modules
+.next
+.turbo
+dist
+target
+coverage
+.git
+.github
+docs
+tests
+*.md
+!README.md
+.env*
+.DS_Store

@@ -1,0 +1,14 @@
+%% Agent lifecycle — the deterministic crew state machine.
+stateDiagram-v2
+    [*] --> idle
+    idle --> thinking: mission seed assigned
+    thinking --> reporting: rubric scored
+    thinking --> dissenting: ethics rule violated
+    dissenting --> reporting: conditions accepted
+    reporting --> idle: briefing archived
+    dissenting --> [*]: recommendation=hold
+
+    note right of dissenting
+        ETHOS vetoes blocked constructs.
+        The gate cannot be overridden.
+    end note

@@ -1,0 +1,17 @@
+# render.yaml — one-click Render blueprint
+services:
+  - type: web
+    name: chromoforge
+    runtime: node
+    plan: starter
+    region: singapore
+    buildCommand: bun install --frozen-lockfile && bun run build
+    startCommand: bun apps/web/.next/standalone/apps/web/server.js
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      - key: PORT
+        value: "3000"

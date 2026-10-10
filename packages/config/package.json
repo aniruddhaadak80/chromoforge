@@ -1,0 +1,11 @@
+{
+  "name": "@repo/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared TypeScript base configuration for chromoforge workspaces.",
+  "exports": {
+    "./tsconfig/base": "./tsconfig/base.json"
+  },
+  "files": ["tsconfig"]
+}

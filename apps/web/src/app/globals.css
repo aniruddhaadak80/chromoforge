@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/*
+ * Chromoforge design tokens — bio-luminescent teal on abyss charcoal.
+ * Tailwind v4 CSS-first theme: every custom color, font and radius below
+ * becomes a utility class (bg-abyss, text-bio, font-display, ...).
+ */
+@theme {
+  --color-abyss: #070b12;
+  --color-surface: #0d1420;
+  --color-surface-2: #111a2b;
+  --color-hull: #1b2942;
+  --color-bio: #38e8b0;
+  --color-bio-dim: #1d7a5f;
+  --color-cyan: #7dd3fc;
+  --color-amber: #fbbf24;
+  --color-danger: #f87171;
+  --color-star: #e8eefc;
+  --color-muted: #8ba3c7;
+
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --radius-panel: 0.875rem;
+}
+
+html {
+  color-scheme: dark light;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-abyss);
+  color: var(--color-star);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle starfield behind everything — pure CSS, no JS, no images. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(232, 238, 252, 0.5), transparent 55%),
+    radial-gradient(1px 1px at 75% 15%, rgba(232, 238, 252, 0.35), transparent 55%),
+    radial-gradient(1.5px 1.5px at 45% 70%, rgba(125, 211, 252, 0.4), transparent 55%),
+    radial-gradient(1px 1px at 88% 55%, rgba(232, 238, 252, 0.3), transparent 55%),
+    radial-gradient(1px 1px at 10% 85%, rgba(56, 232, 176, 0.35), transparent 55%);
+  background-size: 340px 340px;
+  opacity: 0.6;
+}
+
+::selection {
+  background: var(--color-bio);
+  color: var(--color-abyss);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

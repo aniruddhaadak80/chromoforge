@@ -1,0 +1,31 @@
+%% chromoforge system architecture — how the monorepo fits together.
+%% Rendered by GitHub from this .mmd source; also embedded in README.md.
+flowchart LR
+    subgraph browser["Browser (zero API keys)"]
+        UI["Next.js 16 App Router<br/>React 19 · Tailwind v4"]
+        Store["zustand store<br/>persisted to localStorage"]
+    end
+
+    subgraph core["packages/core — pure domain"]
+        Genetics["genetics/<br/>parts · traits · guides · policy"]
+        Exo["exoplanets/<br/>catalog · hammer projection"]
+        Eco["ecology/<br/>environment · simulate"]
+        Crew["agents/<br/>deterministic crew"]
+    end
+
+    subgraph polyglot["Polyglot services"]
+        Rust["crates/ecology<br/>rust reference engine"]
+        Py["services/agents<br/>FastAPI · batch sim · briefings"]
+        Sh["bin/parity.sh<br/>cross-language parity"]
+    end
+
+    UI -->|"@repo/core (workspace)"| Genetics
+    UI --> Exo
+    UI --> Eco
+    UI --> Crew
+    UI <--> Store
+    Py -. "parity fixtures" .-> Eco
+    Rust -. "parity fixtures" .-> Eco
+    Sh --> Py
+    Sh --> Rust
+    UI -. "optional acceleration" .-> Py

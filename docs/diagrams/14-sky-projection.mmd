@@ -1,0 +1,8 @@
+%% Sky Atlas pipeline: catalog coordinates to a Hammer projection pin.
+flowchart LR
+    Catalog["EXOPLANETS<br/>(RA/Dec J2000, degrees)"] --> Normalize["normalizeRa → [-180, 180)<br/>(ra/2 must be folded!)"]
+    Normalize --> Rotate["ra/2 → rotate celestial pole"]
+    Rotate --> Project["x = 2·cos(dec)·sin(ra/2)/k<br/>y = sin(dec)/k<br/>k = √(1 + cos(dec)·cos(ra/2))"]
+    Project --> Pin["SVG circle on the map<br/>colored by regime"]
+    Pin --> Hover["hover/select → environment panel"]
+    Sky["skyGrid(): meridians × parallels"] --> Project

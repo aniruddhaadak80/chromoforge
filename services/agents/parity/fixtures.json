@@ -1,0 +1,1296 @@
+{
+  "generated_by": "packages/core/scripts/gen-vectors.ts",
+  "engine": "typescript",
+  "fixtures": [
+    {
+      "name": "hardy-on-trappist-1e",
+      "input": {
+        "traits": {
+          "thermotolerance": 0.61836,
+          "radioresistance": 0.34218,
+          "photosyntheticEfficiency": 0.44831999999999994,
+          "osmoticTolerance": 0,
+          "metabolicRate": 0.15,
+          "pigmentation": 0,
+          "sporeFormation": 0,
+          "nitrogenFixation": 0,
+          "toxinProduction": 0
+        },
+        "environment": {
+          "temp_k": 282,
+          "radiation_index": 2.5996922894835075,
+          "water": 1
+        },
+        "upkeep": 37,
+        "config": {
+          "generations": 60,
+          "founders": 100,
+          "mutation_std_dev": 0.4,
+          "seed": 7331,
+          "world_fertility": null
+        }
+      },
+      "expected": {
+        "history": [
+          {
+            "generation": 0,
+            "population": 119,
+            "mean_fitness": 0.3092,
+            "events": []
+          },
+          {
+            "generation": 1,
+            "population": 142,
+            "mean_fitness": 0.3106,
+            "events": []
+          },
+          {
+            "generation": 2,
+            "population": 177,
+            "mean_fitness": 0.3287,
+            "events": []
+          },
+          {
+            "generation": 3,
+            "population": 234,
+            "mean_fitness": 0.3546,
+            "events": [
+              "Beneficial mutation resolves in a fitter subpopulation."
+            ]
+          },
+          {
+            "generation": 4,
+            "population": 326,
+            "mean_fitness": 0.378,
+            "events": []
+          },
+          {
+            "generation": 5,
+            "population": 460,
+            "mean_fitness": 0.3858,
+            "events": []
+          },
+          {
+            "generation": 6,
+            "population": 661,
+            "mean_fitness": 0.3981,
+            "events": []
+          },
+          {
+            "generation": 7,
+            "population": 1014,
+            "mean_fitness": 0.4376,
+            "events": []
+          },
+          {
+            "generation": 8,
+            "population": 1560,
+            "mean_fitness": 0.4525,
+            "events": []
+          },
+          {
+            "generation": 9,
+            "population": 2438,
+            "mean_fitness": 0.4876,
+            "events": []
+          },
+          {
+            "generation": 10,
+            "population": 3592,
+            "mean_fitness": 0.4991,
+            "events": []
+          },
+          {
+            "generation": 11,
+            "population": 4804,
+            "mean_fitness": 0.5126,
+            "events": []
+          },
+          {
+            "generation": 12,
+            "population": 5646,
+            "mean_fitness": 0.5249,
+            "events": []
+          },
+          {
+            "generation": 13,
+            "population": 5958,
+            "mean_fitness": 0.5429,
+            "events": []
+          },
+          {
+            "generation": 14,
+            "population": 6000,
+            "mean_fitness": 0.5621,
+            "events": []
+          },
+          {
+            "generation": 15,
+            "population": 6000,
+            "mean_fitness": 0.569,
+            "events": []
+          },
+          {
+            "generation": 16,
+            "population": 6000,
+            "mean_fitness": 0.5867,
+            "events": []
+          },
+          {
+            "generation": 17,
+            "population": 6000,
+            "mean_fitness": 0.5813,
+            "events": []
+          },
+          {
+            "generation": 18,
+            "population": 6000,
+            "mean_fitness": 0.5934,
+            "events": []
+          },
+          {
+            "generation": 19,
+            "population": 6000,
+            "mean_fitness": 0.6032,
+            "events": []
+          },
+          {
+            "generation": 20,
+            "population": 6000,
+            "mean_fitness": 0.621,
+            "events": []
+          },
+          {
+            "generation": 21,
+            "population": 6000,
+            "mean_fitness": 0.6286,
+            "events": []
+          },
+          {
+            "generation": 22,
+            "population": 6000,
+            "mean_fitness": 0.6311,
+            "events": []
+          },
+          {
+            "generation": 23,
+            "population": 6000,
+            "mean_fitness": 0.6377,
+            "events": []
+          },
+          {
+            "generation": 24,
+            "population": 6000,
+            "mean_fitness": 0.631,
+            "events": []
+          },
+          {
+            "generation": 25,
+            "population": 6000,
+            "mean_fitness": 0.6513,
+            "events": []
+          },
+          {
+            "generation": 26,
+            "population": 6000,
+            "mean_fitness": 0.6492,
+            "events": []
+          },
+          {
+            "generation": 27,
+            "population": 6000,
+            "mean_fitness": 0.6506,
+            "events": []
+          },
+          {
+            "generation": 28,
+            "population": 6000,
+            "mean_fitness": 0.6485,
+            "events": []
+          },
+          {
+            "generation": 29,
+            "population": 6000,
+            "mean_fitness": 0.6578,
+            "events": []
+          },
+          {
+            "generation": 30,
+            "population": 6000,
+            "mean_fitness": 0.6571,
+            "events": []
+          },
+          {
+            "generation": 31,
+            "population": 6000,
+            "mean_fitness": 0.6735,
+            "events": []
+          },
+          {
+            "generation": 32,
+            "population": 6000,
+            "mean_fitness": 0.6925,
+            "events": []
+          },
+          {
+            "generation": 33,
+            "population": 6000,
+            "mean_fitness": 0.6887,
+            "events": []
+          },
+          {
+            "generation": 34,
+            "population": 6000,
+            "mean_fitness": 0.6885,
+            "events": []
+          },
+          {
+            "generation": 35,
+            "population": 6000,
+            "mean_fitness": 0.704,
+            "events": []
+          },
+          {
+            "generation": 36,
+            "population": 6000,
+            "mean_fitness": 0.6953,
+            "events": []
+          },
+          {
+            "generation": 37,
+            "population": 6000,
+            "mean_fitness": 0.7023,
+            "events": []
+          },
+          {
+            "generation": 38,
+            "population": 6000,
+            "mean_fitness": 0.7045,
+            "events": []
+          },
+          {
+            "generation": 39,
+            "population": 6000,
+            "mean_fitness": 0.6998,
+            "events": []
+          },
+          {
+            "generation": 40,
+            "population": 6000,
+            "mean_fitness": 0.7007,
+            "events": []
+          },
+          {
+            "generation": 41,
+            "population": 6000,
+            "mean_fitness": 0.7048,
+            "events": []
+          },
+          {
+            "generation": 42,
+            "population": 6000,
+            "mean_fitness": 0.7055,
+            "events": []
+          },
+          {
+            "generation": 43,
+            "population": 6000,
+            "mean_fitness": 0.6996,
+            "events": []
+          },
+          {
+            "generation": 44,
+            "population": 6000,
+            "mean_fitness": 0.6997,
+            "events": []
+          },
+          {
+            "generation": 45,
+            "population": 6000,
+            "mean_fitness": 0.6977,
+            "events": []
+          },
+          {
+            "generation": 46,
+            "population": 6000,
+            "mean_fitness": 0.6987,
+            "events": []
+          },
+          {
+            "generation": 47,
+            "population": 6000,
+            "mean_fitness": 0.7168,
+            "events": []
+          },
+          {
+            "generation": 48,
+            "population": 6000,
+            "mean_fitness": 0.718,
+            "events": []
+          },
+          {
+            "generation": 49,
+            "population": 6000,
+            "mean_fitness": 0.7181,
+            "events": []
+          },
+          {
+            "generation": 50,
+            "population": 6000,
+            "mean_fitness": 0.7101,
+            "events": []
+          },
+          {
+            "generation": 51,
+            "population": 6000,
+            "mean_fitness": 0.7036,
+            "events": []
+          },
+          {
+            "generation": 52,
+            "population": 6000,
+            "mean_fitness": 0.7073,
+            "events": []
+          },
+          {
+            "generation": 53,
+            "population": 6000,
+            "mean_fitness": 0.706,
+            "events": []
+          },
+          {
+            "generation": 54,
+            "population": 6000,
+            "mean_fitness": 0.698,
+            "events": []
+          },
+          {
+            "generation": 55,
+            "population": 6000,
+            "mean_fitness": 0.6974,
+            "events": []
+          },
+          {
+            "generation": 56,
+            "population": 6000,
+            "mean_fitness": 0.71,
+            "events": []
+          },
+          {
+            "generation": 57,
+            "population": 6000,
+            "mean_fitness": 0.715,
+            "events": []
+          },
+          {
+            "generation": 58,
+            "population": 6000,
+            "mean_fitness": 0.7077,
+            "events": []
+          },
+          {
+            "generation": 59,
+            "population": 6000,
+            "mean_fitness": 0.7128,
+            "events": []
+          },
+          {
+            "generation": 60,
+            "population": 6000,
+            "mean_fitness": 0.7104,
+            "events": []
+          }
+        ],
+        "outcome": "thriving",
+        "extinct_at": null,
+        "peak_population": 6000
+      }
+    },
+    {
+      "name": "naked-on-55-cnc-e",
+      "input": {
+        "traits": {
+          "thermotolerance": 0,
+          "radioresistance": 0,
+          "photosyntheticEfficiency": 0,
+          "osmoticTolerance": 0,
+          "metabolicRate": 0.15,
+          "pigmentation": 0,
+          "sporeFormation": 0,
+          "nitrogenFixation": 0,
+          "toxinProduction": 0
+        },
+        "environment": {
+          "temp_k": 1286,
+          "radiation_index": 26.19160170741759,
+          "water": 0
+        },
+        "upkeep": 0,
+        "config": {
+          "generations": 60,
+          "founders": 100,
+          "mutation_std_dev": 0.4,
+          "seed": 5,
+          "world_fertility": null
+        }
+      },
+      "expected": {
+        "history": [
+          {
+            "generation": 0,
+            "population": 100,
+            "mean_fitness": 0.0935,
+            "events": []
+          },
+          {
+            "generation": 1,
+            "population": 100,
+            "mean_fitness": 0.0931,
+            "events": []
+          },
+          {
+            "generation": 2,
+            "population": 100,
+            "mean_fitness": 0.0932,
+            "events": []
+          },
+          {
+            "generation": 3,
+            "population": 100,
+            "mean_fitness": 0.0935,
+            "events": []
+          },
+          {
+            "generation": 4,
+            "population": 100,
+            "mean_fitness": 0.1063,
+            "events": []
+          },
+          {
+            "generation": 5,
+            "population": 100,
+            "mean_fitness": 0.1203,
+            "events": []
+          },
+          {
+            "generation": 6,
+            "population": 0,
+            "mean_fitness": 0.12025852029107523,
+            "events": [
+              "Sustained sub-lethal fitness; the colony fades."
+            ]
+          }
+        ],
+        "outcome": "extinct",
+        "extinct_at": 6,
+        "peak_population": 100
+      }
+    },
+    {
+      "name": "balanced-on-kepler-442b",
+      "input": {
+        "traits": {
+          "thermotolerance": 0.22,
+          "radioresistance": 0.378,
+          "photosyntheticEfficiency": 0,
+          "osmoticTolerance": 0.26,
+          "metabolicRate": 0.15,
+          "pigmentation": 0,
+          "sporeFormation": 0,
+          "nitrogenFixation": 0,
+          "toxinProduction": 0
+        },
+        "environment": {
+          "temp_k": 285,
+          "radiation_index": 1.1713240371477056,
+          "water": 1
+        },
+        "upkeep": 21,
+        "config": {
+          "generations": 60,
+          "founders": 100,
+          "mutation_std_dev": 0.4,
+          "seed": 4242,
+          "world_fertility": null
+        }
+      },
+      "expected": {
+        "history": [
+          {
+            "generation": 0,
+            "population": 108,
+            "mean_fitness": 0.2746,
+            "events": []
+          },
+          {
+            "generation": 1,
+            "population": 122,
+            "mean_fitness": 0.292,
+            "events": []
+          },
+          {
+            "generation": 2,
+            "population": 144,
+            "mean_fitness": 0.3075,
+            "events": []
+          },
+          {
+            "generation": 3,
+            "population": 174,
+            "mean_fitness": 0.3163,
+            "events": []
+          },
+          {
+            "generation": 4,
+            "population": 221,
+            "mean_fitness": 0.3364,
+            "events": []
+          },
+          {
+            "generation": 5,
+            "population": 289,
+            "mean_fitness": 0.3501,
+            "events": []
+          },
+          {
+            "generation": 6,
+            "population": 399,
+            "mean_fitness": 0.3755,
+            "events": []
+          },
+          {
+            "generation": 7,
+            "population": 574,
+            "mean_fitness": 0.3965,
+            "events": []
+          },
+          {
+            "generation": 8,
+            "population": 818,
+            "mean_fitness": 0.3969,
+            "events": []
+          },
+          {
+            "generation": 9,
+            "population": 1232,
+            "mean_fitness": 0.433,
+            "events": []
+          },
+          {
+            "generation": 10,
+            "population": 1926,
+            "mean_fitness": 0.4717,
+            "events": []
+          },
+          {
+            "generation": 11,
+            "population": 3003,
+            "mean_fitness": 0.5073,
+            "events": []
+          },
+          {
+            "generation": 12,
+            "population": 4430,
+            "mean_fitness": 0.5473,
+            "events": []
+          },
+          {
+            "generation": 13,
+            "population": 5688,
+            "mean_fitness": 0.5892,
+            "events": []
+          },
+          {
+            "generation": 14,
+            "population": 6022,
+            "mean_fitness": 0.6027,
+            "events": []
+          },
+          {
+            "generation": 15,
+            "population": 5997,
+            "mean_fitness": 0.6088,
+            "events": []
+          },
+          {
+            "generation": 16,
+            "population": 6001,
+            "mean_fitness": 0.6419,
+            "events": []
+          },
+          {
+            "generation": 17,
+            "population": 6000,
+            "mean_fitness": 0.6508,
+            "events": []
+          },
+          {
+            "generation": 18,
+            "population": 6000,
+            "mean_fitness": 0.6732,
+            "events": []
+          },
+          {
+            "generation": 19,
+            "population": 6000,
+            "mean_fitness": 0.6895,
+            "events": []
+          },
+          {
+            "generation": 20,
+            "population": 6000,
+            "mean_fitness": 0.7165,
+            "events": []
+          },
+          {
+            "generation": 21,
+            "population": 6000,
+            "mean_fitness": 0.7192,
+            "events": []
+          },
+          {
+            "generation": 22,
+            "population": 6000,
+            "mean_fitness": 0.7325,
+            "events": []
+          },
+          {
+            "generation": 23,
+            "population": 6000,
+            "mean_fitness": 0.7357,
+            "events": []
+          },
+          {
+            "generation": 24,
+            "population": 6000,
+            "mean_fitness": 0.733,
+            "events": []
+          },
+          {
+            "generation": 25,
+            "population": 6000,
+            "mean_fitness": 0.7205,
+            "events": []
+          },
+          {
+            "generation": 26,
+            "population": 6000,
+            "mean_fitness": 0.7261,
+            "events": []
+          },
+          {
+            "generation": 27,
+            "population": 6000,
+            "mean_fitness": 0.7537,
+            "events": []
+          },
+          {
+            "generation": 28,
+            "population": 6000,
+            "mean_fitness": 0.7526,
+            "events": []
+          },
+          {
+            "generation": 29,
+            "population": 6000,
+            "mean_fitness": 0.7673,
+            "events": []
+          },
+          {
+            "generation": 30,
+            "population": 6000,
+            "mean_fitness": 0.774,
+            "events": []
+          },
+          {
+            "generation": 31,
+            "population": 6000,
+            "mean_fitness": 0.7818,
+            "events": []
+          },
+          {
+            "generation": 32,
+            "population": 6000,
+            "mean_fitness": 0.7616,
+            "events": []
+          },
+          {
+            "generation": 33,
+            "population": 6000,
+            "mean_fitness": 0.7601,
+            "events": []
+          },
+          {
+            "generation": 34,
+            "population": 6000,
+            "mean_fitness": 0.7568,
+            "events": []
+          },
+          {
+            "generation": 35,
+            "population": 6000,
+            "mean_fitness": 0.7681,
+            "events": []
+          },
+          {
+            "generation": 36,
+            "population": 6000,
+            "mean_fitness": 0.7661,
+            "events": []
+          },
+          {
+            "generation": 37,
+            "population": 6000,
+            "mean_fitness": 0.7651,
+            "events": []
+          },
+          {
+            "generation": 38,
+            "population": 6000,
+            "mean_fitness": 0.7532,
+            "events": []
+          },
+          {
+            "generation": 39,
+            "population": 6000,
+            "mean_fitness": 0.7537,
+            "events": []
+          },
+          {
+            "generation": 40,
+            "population": 6000,
+            "mean_fitness": 0.7567,
+            "events": []
+          },
+          {
+            "generation": 41,
+            "population": 6000,
+            "mean_fitness": 0.7616,
+            "events": []
+          },
+          {
+            "generation": 42,
+            "population": 6000,
+            "mean_fitness": 0.7929,
+            "events": []
+          },
+          {
+            "generation": 43,
+            "population": 6000,
+            "mean_fitness": 0.818,
+            "events": []
+          },
+          {
+            "generation": 44,
+            "population": 6000,
+            "mean_fitness": 0.8297,
+            "events": []
+          },
+          {
+            "generation": 45,
+            "population": 6000,
+            "mean_fitness": 0.8302,
+            "events": []
+          },
+          {
+            "generation": 46,
+            "population": 6000,
+            "mean_fitness": 0.8427,
+            "events": []
+          },
+          {
+            "generation": 47,
+            "population": 6000,
+            "mean_fitness": 0.8341,
+            "events": []
+          },
+          {
+            "generation": 48,
+            "population": 6000,
+            "mean_fitness": 0.8239,
+            "events": []
+          },
+          {
+            "generation": 49,
+            "population": 6000,
+            "mean_fitness": 0.8351,
+            "events": []
+          },
+          {
+            "generation": 50,
+            "population": 6000,
+            "mean_fitness": 0.8294,
+            "events": []
+          },
+          {
+            "generation": 51,
+            "population": 6000,
+            "mean_fitness": 0.8305,
+            "events": []
+          },
+          {
+            "generation": 52,
+            "population": 6000,
+            "mean_fitness": 0.8368,
+            "events": []
+          },
+          {
+            "generation": 53,
+            "population": 6000,
+            "mean_fitness": 0.8404,
+            "events": []
+          },
+          {
+            "generation": 54,
+            "population": 6000,
+            "mean_fitness": 0.8347,
+            "events": []
+          },
+          {
+            "generation": 55,
+            "population": 6000,
+            "mean_fitness": 0.8355,
+            "events": []
+          },
+          {
+            "generation": 56,
+            "population": 6000,
+            "mean_fitness": 0.8298,
+            "events": []
+          },
+          {
+            "generation": 57,
+            "population": 6000,
+            "mean_fitness": 0.8344,
+            "events": []
+          },
+          {
+            "generation": 58,
+            "population": 6000,
+            "mean_fitness": 0.8358,
+            "events": []
+          },
+          {
+            "generation": 59,
+            "population": 6000,
+            "mean_fitness": 0.8252,
+            "events": []
+          },
+          {
+            "generation": 60,
+            "population": 6000,
+            "mean_fitness": 0.8459,
+            "events": []
+          }
+        ],
+        "outcome": "thriving",
+        "extinct_at": null,
+        "peak_population": 6022
+      }
+    },
+    {
+      "name": "hardy-on-proxima-b",
+      "input": {
+        "traits": {
+          "thermotolerance": 0.61836,
+          "radioresistance": 0.34218,
+          "photosyntheticEfficiency": 0.44831999999999994,
+          "osmoticTolerance": 0,
+          "metabolicRate": 0.15,
+          "pigmentation": 0,
+          "sporeFormation": 0,
+          "nitrogenFixation": 0,
+          "toxinProduction": 0
+        },
+        "environment": {
+          "temp_k": 281,
+          "radiation_index": 2.5799224794555364,
+          "water": 1
+        },
+        "upkeep": 37,
+        "config": {
+          "generations": 60,
+          "founders": 100,
+          "mutation_std_dev": 0.4,
+          "seed": 99,
+          "world_fertility": null
+        }
+      },
+      "expected": {
+        "history": [
+          {
+            "generation": 0,
+            "population": 118,
+            "mean_fitness": 0.3083,
+            "events": []
+          },
+          {
+            "generation": 1,
+            "population": 142,
+            "mean_fitness": 0.3152,
+            "events": []
+          },
+          {
+            "generation": 2,
+            "population": 178,
+            "mean_fitness": 0.3316,
+            "events": []
+          },
+          {
+            "generation": 3,
+            "population": 232,
+            "mean_fitness": 0.3474,
+            "events": []
+          },
+          {
+            "generation": 4,
+            "population": 318,
+            "mean_fitness": 0.3699,
+            "events": []
+          },
+          {
+            "generation": 5,
+            "population": 452,
+            "mean_fitness": 0.3891,
+            "events": []
+          },
+          {
+            "generation": 6,
+            "population": 677,
+            "mean_fitness": 0.418,
+            "events": []
+          },
+          {
+            "generation": 7,
+            "population": 1082,
+            "mean_fitness": 0.4605,
+            "events": []
+          },
+          {
+            "generation": 8,
+            "population": 1720,
+            "mean_fitness": 0.4748,
+            "events": []
+          },
+          {
+            "generation": 9,
+            "population": 2741,
+            "mean_fitness": 0.5101,
+            "events": []
+          },
+          {
+            "generation": 10,
+            "population": 4097,
+            "mean_fitness": 0.5347,
+            "events": []
+          },
+          {
+            "generation": 11,
+            "population": 5415,
+            "mean_fitness": 0.5671,
+            "events": []
+          },
+          {
+            "generation": 12,
+            "population": 5969,
+            "mean_fitness": 0.5782,
+            "events": []
+          },
+          {
+            "generation": 13,
+            "population": 6003,
+            "mean_fitness": 0.5898,
+            "events": []
+          },
+          {
+            "generation": 14,
+            "population": 6000,
+            "mean_fitness": 0.5927,
+            "events": []
+          },
+          {
+            "generation": 15,
+            "population": 6000,
+            "mean_fitness": 0.6105,
+            "events": []
+          },
+          {
+            "generation": 16,
+            "population": 6000,
+            "mean_fitness": 0.6148,
+            "events": []
+          },
+          {
+            "generation": 17,
+            "population": 6000,
+            "mean_fitness": 0.6225,
+            "events": []
+          },
+          {
+            "generation": 18,
+            "population": 6000,
+            "mean_fitness": 0.6409,
+            "events": []
+          },
+          {
+            "generation": 19,
+            "population": 6000,
+            "mean_fitness": 0.6488,
+            "events": []
+          },
+          {
+            "generation": 20,
+            "population": 6000,
+            "mean_fitness": 0.649,
+            "events": []
+          },
+          {
+            "generation": 21,
+            "population": 6000,
+            "mean_fitness": 0.6531,
+            "events": []
+          },
+          {
+            "generation": 22,
+            "population": 6000,
+            "mean_fitness": 0.6558,
+            "events": []
+          },
+          {
+            "generation": 23,
+            "population": 6000,
+            "mean_fitness": 0.6477,
+            "events": []
+          },
+          {
+            "generation": 24,
+            "population": 6000,
+            "mean_fitness": 0.6461,
+            "events": []
+          },
+          {
+            "generation": 25,
+            "population": 6000,
+            "mean_fitness": 0.6414,
+            "events": []
+          },
+          {
+            "generation": 26,
+            "population": 6000,
+            "mean_fitness": 0.6531,
+            "events": []
+          },
+          {
+            "generation": 27,
+            "population": 6000,
+            "mean_fitness": 0.6402,
+            "events": []
+          },
+          {
+            "generation": 28,
+            "population": 6000,
+            "mean_fitness": 0.6461,
+            "events": []
+          },
+          {
+            "generation": 29,
+            "population": 6000,
+            "mean_fitness": 0.673,
+            "events": []
+          },
+          {
+            "generation": 30,
+            "population": 6000,
+            "mean_fitness": 0.6811,
+            "events": []
+          },
+          {
+            "generation": 31,
+            "population": 6000,
+            "mean_fitness": 0.6973,
+            "events": []
+          },
+          {
+            "generation": 32,
+            "population": 6000,
+            "mean_fitness": 0.7103,
+            "events": []
+          },
+          {
+            "generation": 33,
+            "population": 6000,
+            "mean_fitness": 0.7037,
+            "events": []
+          },
+          {
+            "generation": 34,
+            "population": 6000,
+            "mean_fitness": 0.7029,
+            "events": []
+          },
+          {
+            "generation": 35,
+            "population": 6000,
+            "mean_fitness": 0.7033,
+            "events": []
+          },
+          {
+            "generation": 36,
+            "population": 6000,
+            "mean_fitness": 0.7015,
+            "events": []
+          },
+          {
+            "generation": 37,
+            "population": 6000,
+            "mean_fitness": 0.7035,
+            "events": []
+          },
+          {
+            "generation": 38,
+            "population": 6000,
+            "mean_fitness": 0.7098,
+            "events": []
+          },
+          {
+            "generation": 39,
+            "population": 6000,
+            "mean_fitness": 0.7103,
+            "events": []
+          },
+          {
+            "generation": 40,
+            "population": 6000,
+            "mean_fitness": 0.7226,
+            "events": [
+              "Beneficial mutation resolves in a fitter subpopulation."
+            ]
+          },
+          {
+            "generation": 41,
+            "population": 6000,
+            "mean_fitness": 0.7272,
+            "events": []
+          },
+          {
+            "generation": 42,
+            "population": 6000,
+            "mean_fitness": 0.7296,
+            "events": []
+          },
+          {
+            "generation": 43,
+            "population": 6000,
+            "mean_fitness": 0.7259,
+            "events": []
+          },
+          {
+            "generation": 44,
+            "population": 6000,
+            "mean_fitness": 0.7319,
+            "events": []
+          },
+          {
+            "generation": 45,
+            "population": 6000,
+            "mean_fitness": 0.7247,
+            "events": []
+          },
+          {
+            "generation": 46,
+            "population": 6000,
+            "mean_fitness": 0.7307,
+            "events": []
+          },
+          {
+            "generation": 47,
+            "population": 6000,
+            "mean_fitness": 0.7328,
+            "events": []
+          },
+          {
+            "generation": 48,
+            "population": 6000,
+            "mean_fitness": 0.7289,
+            "events": []
+          },
+          {
+            "generation": 49,
+            "population": 6000,
+            "mean_fitness": 0.7223,
+            "events": []
+          },
+          {
+            "generation": 50,
+            "population": 6000,
+            "mean_fitness": 0.7186,
+            "events": []
+          },
+          {
+            "generation": 51,
+            "population": 6000,
+            "mean_fitness": 0.7118,
+            "events": []
+          },
+          {
+            "generation": 52,
+            "population": 6000,
+            "mean_fitness": 0.7154,
+            "events": []
+          },
+          {
+            "generation": 53,
+            "population": 6000,
+            "mean_fitness": 0.7165,
+            "events": []
+          },
+          {
+            "generation": 54,
+            "population": 6000,
+            "mean_fitness": 0.7057,
+            "events": []
+          },
+          {
+            "generation": 55,
+            "population": 6000,
+            "mean_fitness": 0.7065,
+            "events": []
+          },
+          {
+            "generation": 56,
+            "population": 6000,
+            "mean_fitness": 0.6993,
+            "events": []
+          },
+          {
+            "generation": 57,
+            "population": 6000,
+            "mean_fitness": 0.7127,
+            "events": []
+          },
+          {
+            "generation": 58,
+            "population": 6000,
+            "mean_fitness": 0.7165,
+            "events": []
+          },
+          {
+            "generation": 59,
+            "population": 6000,
+            "mean_fitness": 0.6977,
+            "events": []
+          },
+          {
+            "generation": 60,
+            "population": 6000,
+            "mean_fitness": 0.6978,
+            "events": []
+          }
+        ],
+        "outcome": "thriving",
+        "extinct_at": null,
+        "peak_population": 6003
+      }
+    }
+  ]
+}
