@@ -17,7 +17,7 @@ services:
   # Optional accelerator — the app is fully functional without it.
   agents:
     build:
-      context: ./services/agents
+      context: ./python/agents
       dockerfile: Dockerfile
     ports:
       - "8787:8787"

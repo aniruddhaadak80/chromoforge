@@ -15,7 +15,7 @@ Maintain three implementations of the identical algorithm, operation-for-operati
 
 1. `packages/core/src/ecology/simulate.ts` — the source of truth, used by the app.
 2. `crates/ecology` — Rust reference engine, zero dependencies.
-3. `services/agents/sim.py` — Python port used by the batch service.
+3. `python/agents/sim.py` — Python port used by the batch service.
 
 `packages/core/scripts/gen-vectors.ts` emits fixtures from the TypeScript engine; the Rust and
 Python implementations are diffed against those fixtures (`bin/parity.sh`, pytest, cargo tests).

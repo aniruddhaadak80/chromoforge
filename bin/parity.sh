@@ -19,11 +19,11 @@ echo "==> regenerating fixtures from the TypeScript engine"
 (cd "$REPO_ROOT/packages/core" && bun scripts/gen-vectors.ts)
 
 echo "==> python engine vs typescript fixtures"
-(cd "$REPO_ROOT/services/agents" && python -m pytest tests/test_parity.py -q)
+(cd "$REPO_ROOT/python/agents" && python -m pytest tests/test_parity.py -q)
 
 if [ "$RUST" -eq 1 ]; then
   echo "==> rust engine (skipped automatically when no linker is available)"
-  (cd "$REPO_ROOT/services/agents" && python -m parity.run_parity --rust) || {
+  (cd "$REPO_ROOT/python/agents" && python -m parity.run_parity --rust) || {
     echo "note: rust binary unavailable on this machine — run again on Linux/macOS/VS Build Tools" >&2
   }
 fi

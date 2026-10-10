@@ -3,9 +3,5 @@
   "framework": "nextjs",
   "buildCommand": "bun run build",
   "installCommand": "bun install --frozen-lockfile",
-  "regions": ["bom1"],
-  "github": {
-    "enabled": true,
-    "autoJobCancelation": true
-  }
+  "regions": ["bom1"]
 }

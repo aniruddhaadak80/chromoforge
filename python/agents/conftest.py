@@ -1,4 +1,4 @@
-"""Shared pytest setup: put services/agents on sys.path."""
+"""Shared pytest setup: put python/agents on sys.path."""
 
 import sys
 from pathlib import Path

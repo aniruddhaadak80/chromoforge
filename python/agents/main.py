@@ -6,7 +6,7 @@ API keys, and degrades gracefully — the Next.js app computes everything
 locally too (packages/core), so this service is an accelerator and a parity
 oracle, never a dependency for the demo.
 
-Run: uvicorn main:app --reload --port 8787   (from services/agents/)
+Run: uvicorn main:app --reload --port 8787   (from python/agents/)
 """
 
 from __future__ import annotations

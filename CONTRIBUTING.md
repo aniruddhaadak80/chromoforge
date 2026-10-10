@@ -36,7 +36,7 @@ Service-side checks (optional but appreciated):
 
 ```bash
 cargo check --tests --manifest-path crates/ecology/Cargo.toml   # full `cargo test` in CI (ubuntu)
-cd services/agents && python -m pytest tests -q                 # parity vs typescript fixtures
+cd python/agents && python -m pytest tests -q                 # parity vs typescript fixtures
 bin/parity.sh                                                  # regenerate fixtures + diff engines
 ```
 
@@ -46,7 +46,7 @@ bin/parity.sh                                                  # regenerate fixt
 apps/web/       Next.js 16 app — pages, API routes, components
 packages/core   pure domain logic (genetics, exoplanets, ecology, agents)
 crates/ecology  Rust reference engine (parity oracle)
-services/agents Python service + parity harness + catalog fetcher
+python/agents Python service + parity harness + catalog fetcher
 docs/           diagrams (.mmd), ADRs, guides, runbooks
 scripts/        gen-assets.mjs (SVGs), loc-count.mjs (scale measure)
 ```

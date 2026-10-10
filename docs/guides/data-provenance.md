@@ -11,7 +11,7 @@ The demo and the test suite never touch the network. To refresh or expand the se
 live archive:
 
 ```bash
-python services/agents/data/fetch_catalog.py --limit 60
+python python/agents/data/fetch_catalog.py --limit 60
 ```
 
 The fetcher queries the TAP service (`ps` table, `default_flag=1`) and writes

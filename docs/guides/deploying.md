@@ -40,7 +40,7 @@ fly deploy
 The web app is fully functional without it. To run the batch/briefing accelerator:
 
 ```bash
-cd services/agents
+cd python/agents
 pip install -r requirements.txt
 uvicorn main:app --port 8787
 ```

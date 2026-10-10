@@ -3,7 +3,7 @@
  *
  * The TypeScript engine is the source of truth: this script runs canonical
  * scenarios through packages/core and writes them (inputs + expected output)
- * to services/agents/parity/fixtures.json. The Rust crate and the Python
+ * to python/agents/parity/fixtures.json. The Rust crate and the Python
  * service are then diffed against these vectors.
  *
  * Usage: bun scripts/gen-vectors.ts
@@ -120,7 +120,7 @@ const fixtures: Fixture[] = SCENARIOS.map(({ name, genome: genomeKey, planetId, 
 });
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const out = resolve(HERE, "../../../services/agents/parity/fixtures.json");
+const out = resolve(HERE, "../../../python/agents/parity/fixtures.json");
 mkdirSync(dirname(out), { recursive: true });
 writeFileSync(out, `${JSON.stringify({ generated_by: "packages/core/scripts/gen-vectors.ts", engine: "typescript", fixtures }, null, 2)}\n`);
 console.log(`wrote ${fixtures.length} fixtures -> ${out}`);

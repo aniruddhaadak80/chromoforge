@@ -96,7 +96,7 @@ flowchart LR
 
     subgraph polyglot["Polyglot services"]
         Rust["crates/ecology<br/>rust reference engine"]
-        Py["services/agents<br/>FastAPI · batch sim · briefings"]
+        Py["python/agents<br/>FastAPI · batch sim · briefings"]
         Sh["bin/parity.sh<br/>cross-language parity"]
     end
 
@@ -149,7 +149,7 @@ bun scripts/loc-count.mjs --min-lines 100000   # fails if under the floor (CI ga
 | [docs/guides/deploying.md](docs/guides/deploying.md) | Vercel / Docker / Fly / Render paths |
 | [docs/guides/data-provenance.md](docs/guides/data-provenance.md) | where every number comes from |
 | [docs/adr/](docs/adr/) | why the parity engine, why no API keys, why Hammer, why SQLite-default |
-| [services/agents/README.md](services/agents/README.md) | the Python service + parity harness |
+| [python/agents/README.md](python/agents/README.md) | the Python service + parity harness |
 | [crates/ecology/README.md](crates/ecology/README.md) | the Rust reference engine |
 | [docs/runbooks/](docs/runbooks/) | deploy rollback, release process |
 

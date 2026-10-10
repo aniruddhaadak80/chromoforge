@@ -1,4 +1,4 @@
-# services/agents — the Python side of foundry
+# python/agents — the Python side of foundry
 
 A small FastAPI service that runs the *heavier* deterministic work off the web thread: batch
 simulations and crew briefings. It needs no API keys and degrades gracefully — the Next.js app
@@ -20,7 +20,7 @@ oracle, never a dependency.
 ## Run it
 
 ```bash
-cd services/agents
+cd python/agents
 pip install -r requirements.txt
 uvicorn main:app --port 8787
 ```
