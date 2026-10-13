@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Dna } from "lucide-react";
 import { cn } from "@/lib/cn";
+import { CommandPalette } from "@/components/command-palette";
 
 const LINKS: { href: string; label: string }[] = [
   { href: "/dashboard", label: "Foundry" },
@@ -13,6 +14,7 @@ const LINKS: { href: string; label: string }[] = [
   { href: "/atlas", label: "Atlas" },
   { href: "/release", label: "Release" },
   { href: "/theater", label: "Sim" },
+  { href: "/phylo", label: "Lineage" },
   { href: "/safety", label: "Safety" },
   { href: "/crew", label: "Crew" },
 ];
@@ -46,6 +48,7 @@ export function Nav() {
             </Link>
           );
         })}
+        <CommandPalette />
         <Link
           href="/about"
           className="ml-auto rounded-full border border-hull px-3 py-1.5 text-sm text-muted hover:border-bio/50 hover:text-star"

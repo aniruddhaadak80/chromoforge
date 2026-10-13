@@ -57,3 +57,6 @@ services/agents/data/*.json
 Thumbs.db
 
 .vercel
+
+# typescript
+*.tsbuildinfo
