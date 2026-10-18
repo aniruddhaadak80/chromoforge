@@ -76,7 +76,7 @@ export function CommandPalette() {
       <button
         type="button"
         onClick={openPalette}
-        aria-label="Open the command palette"
+        aria-label="Open the command palette — Jump to… ⌘K"
         className="ml-auto inline-flex items-center gap-2 rounded-full border border-hull px-3 py-1.5 text-sm text-muted transition-colors hover:border-bio/50 hover:text-star"
       >
         <Search className="h-4 w-4" aria-hidden />
