@@ -22,3 +22,6 @@ export {
 export type { GuideCandidate, NucleaseProfile, Endonuclease } from "./crispr";
 export { BIOSAFETY_POLICY, evaluateBiosafety } from "./biosecurity";
 export type { BiosafetyReport, Finding, PolicyRule, Verdict } from "./biosecurity";
+export { decodeGenome, encodeGenome, genomeFromSearchParams } from "./codec";
+export { AXIS_LABELS, buildLineage } from "./lineage";
+export type { CommittedStrain, LineageNode } from "./lineage";

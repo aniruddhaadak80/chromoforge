@@ -25,6 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://chromoforge.vercel.app"),
+  manifest: "/manifest.webmanifest",
   title: {
     default: "chromoforge — design life for worlds we know exist",
     template: "%s · chromoforge",

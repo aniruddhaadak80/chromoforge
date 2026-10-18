@@ -1,0 +1,17 @@
+{
+  "name": "chromoforge — design life for worlds we know exist",
+  "short_name": "chromoforge",
+  "description": "A synthetic-biology foundry: compose genomes, design CRISPR guides behind a biosecurity gate, and release organisms into real exoplanet environments.",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#070b12",
+  "theme_color": "#38e8b0",
+  "icons": [
+    {
+      "src": "/images/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

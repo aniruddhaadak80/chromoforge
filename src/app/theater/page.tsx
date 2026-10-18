@@ -48,6 +48,36 @@ export default function TheaterPage() {
 
       {result ? (
         <>
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              data-testid="export-csv"
+              onClick={() => {
+                const header = "generation,population,mean_fitness,events\n";
+                const rows = result.history
+                  .map(
+                    (h) =>
+                      `${h.generation},${h.population},${h.meanFitness},"${h.events.join("; ")}"`,
+                  )
+                  .join("\n");
+                const blob = new Blob([header + rows], { type: "text/csv" });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `${genome.name.replace(/\s+/g, "-")}-${planet.name
+                  .replace(/\s+/g, "-")
+                  .toLowerCase()}.csv`;
+                a.click();
+                URL.revokeObjectURL(url);
+              }}
+              className="rounded-full border border-hull px-4 py-2 text-sm text-star transition-colors hover:border-bio/50"
+            >
+              Download run as CSV
+            </button>
+            <span className="font-mono text-xs text-muted">
+              {result.history.length} generations · seed-deterministic
+            </span>
+          </div>
           <div
             data-testid="outcome-banner"
             className={cn(

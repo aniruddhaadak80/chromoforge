@@ -9,6 +9,14 @@ export * as exoplanets from "./exoplanets/index";
 export * as ecology from "./ecology/index";
 export * as agents from "./agents/index";
 export * as util from "./util/index";
+export * as plugins from "./plugins/index";
+export { pluginRegistry, PluginRegistry } from "./plugins/index";
+export type {
+  ChromoforgePlugin,
+  PartContribution,
+  PluginContext,
+  PluginKind,
+} from "./plugins/index";
 
 export * from "./genetics/index";
 export * from "./exoplanets/index";
