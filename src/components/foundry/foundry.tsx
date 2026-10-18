@@ -18,6 +18,9 @@ import {
 } from "@repo/core";
 import type { Genome, GuideCandidate, TraitAxis } from "@repo/core";
 import { EXOPLANETS } from "@repo/core";
+import { pluginRegistry } from "@repo/core";
+import type { PartContribution } from "@repo/core";
+import { registerBuiltinPlugin } from "@/plugins/builtin";
 import { useFoundry } from "@/lib/store";
 import { cn } from "@/lib/cn";
 import { Card, Badge, Meter } from "@/components/ui";
@@ -30,6 +33,16 @@ export function PartShelf() {
   const { genome, addSlot } = useFoundry();
   const [query, setQuery] = useState("");
   const inTray = new Set(genome.slots.map((s) => s.partId));
+  const pluginParts = useMemo<PartContribution[]>(() => {
+    registerBuiltinPlugin();
+    return pluginRegistry
+      .byKind<PartContribution[]>("part", {
+        seed: "shelf",
+        genomeName: genome.name,
+        worldId: "trappist-1e",
+      })
+      .flat();
+  }, [genome.name]);
   const groups = useMemo(
     () => [
       { kind: "promoter" as const, label: "promoters" },
@@ -86,7 +99,44 @@ export function PartShelf() {
           </div>
         );
       })}
-    </div>
+        {pluginParts.length > 0 ? (
+          <div data-plugin-contributed="true">
+            <p className="font-mono text-xs uppercase tracking-widest text-cyan">
+              plugin: xenobiologist&apos;s toolkit
+            </p>
+            <ul className="mt-2 space-y-2">
+              {pluginParts
+                .filter((p) => `${p.id} ${p.name} ${p.description}`.toLowerCase().includes(query.toLowerCase()))
+                .map((p) => (
+                  <li key={p.id}>
+                    <button
+                      type="button"
+                      data-part={p.id}
+                      data-testid="plugin-part-card"
+                      disabled={inTray.has(p.id)}
+                      onClick={() => addSlot({ partId: p.id, copies: 1 })}
+                      className={cn(
+                        "w-full rounded-panel border p-3 text-left transition-colors",
+                        inTray.has(p.id)
+                          ? "border-hull/50 bg-surface/40 opacity-50"
+                          : "border-hull bg-surface/70 hover:border-bio/40",
+                      )}
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="font-display text-sm font-bold">{p.name}</span>
+                        <Badge tone="cyan">plugin</Badge>
+                      </div>
+                      <p className="mt-1 text-xs text-muted">{p.description}</p>
+                      <p className="mt-1 font-mono text-[10px] text-muted/70">
+                        upkeep {p.upkeep} · {p.family}
+                      </p>
+                    </button>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        ) : null}
+      </div>
   );
 }
 

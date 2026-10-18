@@ -41,12 +41,16 @@ about whether it was a good idea.
 |---|---|---|
 | Build an organism | [/composer](/composer) | Cassettes, copy numbers, live trait derivation |
 | Design guides | [/crispr](/crispr) | Ranked protospacers + real off-target counts |
+| Share a design | [/composer](/composer) | "Copy share link" encodes the genome into a URL |
 | Pass the gate | [/safety](/safety) | The published policy, every finding, every remediation |
 | Get a crew briefing | [/release](/release) | Navigator / Xenobiologist / Ethicist reasoning traces |
-| Rename the strain | [/composer](/composer) | Persisted to localStorage, survives reloads |
-| Watch it survive | [/theater](/theater) | Population + fitness charts, event log, outcome |
+| Extend the bench | plugin API | Contribute parts or annotations — see the built-in toolkit |
+| Watch it survive | [/theater](/theater) | Population + fitness charts, event log, CSV export |
+| Trace its ancestry | [/phylo](/phylo) | The lineage tree of every committed release |
 | Browse worlds | [/vault](/vault) | 22 seeded exoplanets, filters, derived environments |
 | Find them in the sky | [/atlas](/atlas) | Hammer equal-area map, J2000 coordinates |
+
+<kbd>⌘K</kbd> / <kbd>Ctrl+K</kbd> opens the command palette anywhere in the app.
 
 ## Quickstart
 

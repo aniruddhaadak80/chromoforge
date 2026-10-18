@@ -343,13 +343,16 @@ mod tests {
 
     #[test]
     fn rng_matches_typescript_mulberry32() {
-        // The TypeScript engine with seed 7331 yields these first four
-        // draws — regenerate with packages/core/scripts/gen-vectors.ts.
+        // Measured from the TypeScript source of truth (packages/core):
+        //   bun -e "import { mulberry32 } from './packages/core/src/util/rng';
+        //          const r = mulberry32(7331); console.log([r(),r(),r(),r()])"
+        // The Python port prints the identical four draws — all three engines
+        // share one stream.
         let mut rng = Mulberry32::new(7331);
-        assert!((rng.next_f64() - 0.603_226_7).abs() < 1e-6);
-        assert!((rng.next_f64() - 0.191_773_4).abs() < 1e-6);
-        assert!((rng.next_f64() - 0.128_062_2).abs() < 1e-6);
-        assert!((rng.next_f64() - 0.409_163_6).abs() < 1e-6);
+        assert!((rng.next_f64() - 0.973_738_7).abs() < 1e-6);
+        assert!((rng.next_f64() - 0.653_222_7).abs() < 1e-6);
+        assert!((rng.next_f64() - 0.135_566_7).abs() < 1e-6);
+        assert!((rng.next_f64() - 0.239_804_7).abs() < 1e-6);
     }
 
     #[test]
