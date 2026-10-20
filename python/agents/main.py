@@ -11,11 +11,10 @@ Run: uvicorn main:app --reload --port 8787   (from python/agents/)
 
 from __future__ import annotations
 
+from crew import BriefingContext, brief_crew
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
-
-from crew import BriefingContext, brief_crew
 from sim import Environment, SimConfig, SimResult, TraitVector, simulate
 
 app = FastAPI(title="chromoforge agent service", version="0.1.0")
