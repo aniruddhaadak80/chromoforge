@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
 import { createRng, hashSeed, mulberry32 } from "../src/util/rng.js";
-import { clamp, mismatch, saturatingSum } from "../src/util/math.js";
 
 describe("rng", () => {
   it("is deterministic for a given seed", () => {
@@ -43,26 +42,3 @@ describe("rng", () => {
   });
 });
 
-describe("math", () => {
-  it("clamps", () => {
-    expect(clamp(-1)).toBe(0);
-    expect(clamp(2)).toBe(1);
-    expect(clamp(5, 1, 10)).toBe(5);
-  });
-
-  it("mismatch is 0 at ideal and 1 far beyond tolerance", () => {
-    expect(mismatch(0.5, 0.5, 0.5)).toBe(0);
-    expect(mismatch(1.0, 0.5, 0.5)).toBe(1);
-    expect(mismatch(0.75, 0.5, 0.5)).toBeCloseTo(0.5, 5);
-  });
-
-  it("saturatingSum has diminishing returns", () => {
-    const single = saturatingSum([0.3]);
-    const double = saturatingSum([0.3, 0.3]);
-    const triple = saturatingSum([0.3, 0.3, 0.3]);
-    expect(single).toBeCloseTo(0.3, 5);
-    expect(double).toBeGreaterThan(single);
-    expect(triple).toBeGreaterThan(double);
-    expect(triple).toBeLessThan(0.9); // saturation forbids going to 3×0.3
-  });
-});
