@@ -39,6 +39,54 @@ mutation slider; extinction on sustained sub-lethal fitness.
 Deterministic: same genome + world + seed → identical history, guaranteed by the parity suite
 across three languages.
 
+## Sky projection (Hammer–Aitoff)
+
+`docs/diagrams/14-sky-projection.mmd` shows the Atlas pipeline; the math itself lives in
+`packages/core/src/exoplanets/projection.ts`. All-sky maps use the **Hammer (Hammer–Aitoff)
+equal-area** projection: the whole sphere fits in ellipse bounds `(x²)/4 + y² ≤ 1` with only
+mild edge distortion.
+
+Forward map, for right ascension `α` and declination `δ` in degrees:
+
+1. Wrap `α` into `[0, 360)`, then fold `α' = α − 360` when `α > 180`. `sin(α'/2)` and
+   `cos(α'/2)` are not 360°-periodic, so without the fold a star at 0° and the same star at
+   360° would land on different points.
+2. With `k = sqrt(1 + cos δ · cos(α'/2))`:
+
+   ```
+   x = 2 · cos δ · sin(α'/2) / k
+   y =        sin δ              / k
+   ```
+
+### Worked example: TRAPPIST-1 e
+
+TRAPPIST-1 e sits at J2000 RA 346.62°, dec −5.04° (`packages/core/src/exoplanets/catalog.ts`):
+
+| Step | Value |
+|------|-------|
+| Fold RA | 346.62 − 360 = **−13.38°**, so `α'/2` = −6.69° |
+| `cos δ` | cos(−5.04°) = **0.996134** |
+| `cos(α'/2)` | cos(−6.69°) = **0.993191** |
+| `k` | sqrt(1 + 0.996134 · 0.993191) = **1.41044** |
+| `sin(α'/2)` | **−0.116497** |
+| `2 · cos δ · sin(α'/2)` | 2 · 0.996134 · (−0.116497) = **−0.232094** |
+| `sin δ` | **−0.087851** |
+| `x` | −0.232093 / 1.41044 = **−0.164554** |
+| `y` | −0.087851 / 1.41044 = **−0.062286** |
+
+Reproduce against the code:
+
+```sh
+bun -e "const m = await import('./packages/core/src/exoplanets/projection.ts');
+console.log(m.hammerProject(346.62, -5.04));  // x: -0.164554, y: -0.062286
+console.log(m.hammerUnproject(-0.164554, -0.062286)); // { ra: 346.62, dec: -5.04 }"
+```
+
+The inverse map comes from the same identity: on the map ellipse,
+`(x²)/4 + y² = cos δ · cos(α'/2)` (the `d` in `hammerUnproject`), which separates the two
+angles. One round-trip is shown above — unprojecting the worked `x`/`y` recovers
+RA 346.62°, dec −5.04° exactly.
+
 ## What is *not* modeled
 
 Biochemistry, protein folding, ecosystems, gene regulation dynamics, actual orbital mechanics.
