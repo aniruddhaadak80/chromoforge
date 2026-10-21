@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Dna } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { CommandPalette } from "@/components/command-palette";
+import { ShortcutSheet } from "@/components/shortcut-sheet";
 
 const LINKS: { href: string; label: string }[] = [
   { href: "/dashboard", label: "Foundry" },
@@ -49,6 +50,7 @@ export function Nav() {
           );
         })}
         <CommandPalette />
+        <ShortcutSheet />
         <Link
           href="/about"
           className="ml-auto rounded-full border border-hull px-3 py-1.5 text-sm text-muted hover:border-bio/50 hover:text-star"

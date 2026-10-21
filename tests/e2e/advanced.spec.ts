@@ -61,6 +61,41 @@ test.describe("advanced workbench features", () => {
     await expect(page).toHaveURL(/\/atlas$/);
   });
 
+  test("the shortcut sheet opens with ? and is searchable", async ({ page }) => {
+    await page.goto("/");
+    await page.keyboard.press("?");
+    const sheet = page.getByTestId("shortcut-sheet");
+    await expect(sheet).toBeVisible();
+
+    const results = page.getByTestId("shortcut-results");
+    await expect(results).toContainText("command palette");
+    await expect(results).toContainText("Open this shortcut sheet");
+
+    // searchable
+    await page.getByLabel("Search shortcuts").fill("highlighted");
+    await expect(results).toContainText("Open the highlighted result");
+    await expect(results).not.toContainText("Open this shortcut sheet");
+
+    // and it closes again
+    await page.keyboard.press("Escape");
+    await expect(sheet).toBeHidden();
+  });
+
+  test("a ? typed into a field is a question mark, not a command", async ({ page }) => {
+    await page.goto("/vault");
+    await page.getByLabel("Search exoplanets").fill("?");
+    await expect(page.getByTestId("shortcut-sheet")).toHaveCount(0);
+    await expect(page.getByLabel("Search exoplanets")).toHaveValue("?");
+  });
+
+  test("the shortcut sheet passes an axe scan", async ({ page }) => {
+    await page.goto("/");
+    await page.keyboard.press("?");
+    await expect(page.getByTestId("shortcut-sheet")).toBeVisible();
+    const results = await new AxeBuilder({ page }).analyze();
+    expect(results.violations).toEqual([]);
+  });
+
   test("simulation run can be exported as CSV", async ({ page }) => {
     await page.goto("/theater");
     await page.getByTestId("sim-run").click();
