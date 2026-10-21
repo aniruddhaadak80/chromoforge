@@ -41,6 +41,19 @@ test.describe("the foundry workflow", () => {
     await expect(page.getByTestId("result-charts")).toBeVisible();
   });
 
+  test("the sim theater explains the run before the controls", async ({ page }) => {
+    await page.goto("/theater");
+    const intro = page.getByTestId("sim-theater-intro");
+    await expect(intro).toBeVisible();
+    await expect(intro).toContainText("What the run will do");
+    // and it sits above the controls, not below the results
+    const introBox = await intro.boundingBox();
+    const controlsBox = await page.getByTestId("sim-controls").boundingBox();
+    expect(introBox).not.toBeNull();
+    expect(controlsBox).not.toBeNull();
+    expect(introBox!.y).toBeLessThan(controlsBox!.y);
+  });
+
   test("blocked construct locks the release gate", async ({ page }) => {
     await page.goto("/safety");
     await expect(page.getByTestId("safety-page")).toBeVisible();
