@@ -32,6 +32,24 @@ test.describe("public surface", () => {
     expect(after).toBeGreaterThan(0);
   });
 
+  test("the vault detail panel copies a parameter to the clipboard", async ({ page, context }) => {
+    await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+    await page.goto("/vault");
+    const detail = page.getByTestId("planet-detail");
+    await expect(detail).toBeVisible();
+
+    // every parameter in the row has its own copy button
+    const copies = detail.getByRole("button", { name: /Copy .* to clipboard/ });
+    expect(await copies.count()).toBe(8);
+
+    const mass = detail.getByRole("button", { name: "Copy mass to clipboard" });
+    await mass.click();
+    await expect(mass).toHaveAttribute("data-copied", "true");
+
+    const clipboard = await page.evaluate(() => navigator.clipboard.readText());
+    expect(clipboard).toMatch(/M⊕$/);
+  });
+
   test("og route returns a real png", async ({ request }) => {
     const res = await request.get("/og?title=chromoforge");
     expect(res.status()).toBe(200);
