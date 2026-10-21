@@ -5,6 +5,7 @@ import { deriveEnvironment } from "@repo/core";
 import type { Exoplanet } from "@repo/core";
 import { cn } from "@/lib/cn";
 import { Card, Badge } from "@/components/ui";
+import { CopyButton } from "@/components/ui/copy-button";
 
 export interface VaultRow {
   planet: Exoplanet;
@@ -140,19 +141,24 @@ export function VaultFilters({ rows }: { rows: VaultRow[] }) {
             <h3 className="mt-1 font-display text-2xl font-bold">{selected.planet.name}</h3>
             <p className="mt-2 text-sm text-muted">{selected.planet.note}</p>
             <dl className="mt-4 grid grid-cols-2 gap-3 font-mono text-xs">
-              {[
-                ["mass", `${selected.planet.massEarth} M⊕`],
-                ["radius", `${selected.planet.radiusEarth} R⊕`],
-                ["period", `${selected.planet.periodDays} d`],
-                ["insolation", `${selected.planet.insolation} S⊕`],
-                ["star temp", `${selected.planet.starTempK} K`],
-                ["radiation", `${selected.env.radiationIndex.toFixed(2)}× Earth`],
-                ["atmosphere", `${Math.round(selected.env.atmosphere * 100)}%`],
-                ["RA / Dec", `${selected.planet.ra.toFixed(1)}° / ${selected.planet.dec.toFixed(1)}°`],
-              ].map(([k, v]) => (
+              {(
+                [
+                  ["mass", `${selected.planet.massEarth} M⊕`],
+                  ["radius", `${selected.planet.radiusEarth} R⊕`],
+                  ["period", `${selected.planet.periodDays} d`],
+                  ["insolation", `${selected.planet.insolation} S⊕`],
+                  ["star temp", `${selected.planet.starTempK} K`],
+                  ["radiation", `${selected.env.radiationIndex.toFixed(2)}× Earth`],
+                  ["atmosphere", `${Math.round(selected.env.atmosphere * 100)}%`],
+                  ["RA / Dec", `${selected.planet.ra.toFixed(1)}° / ${selected.planet.dec.toFixed(1)}°`],
+                ] satisfies Array<[string, string]>
+              ).map(([k, v]) => (
                 <div key={k}>
                   <dt className="text-muted">{k}</dt>
-                  <dd className="text-star">{v}</dd>
+                  <dd className="flex items-center gap-1.5 text-star">
+                    <span>{v}</span>
+                    <CopyButton value={v} label={k} />
+                  </dd>
                 </div>
               ))}
             </dl>
