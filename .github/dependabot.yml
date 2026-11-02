@@ -7,6 +7,9 @@ updates:
       day: saturday
     open-pull-requests-limit: 5
     labels: [dependencies]
+    ignore:
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
     groups:
       next-ecosystem:
         patterns: ["next", "next-*", "react", "react-dom", "@types/react*"]
