@@ -9,6 +9,8 @@ updates:
     labels: [dependencies]
     ignore:
       - dependency-name: "typescript"
+      - dependency-name: "@eslint/js"
+        update-types: ["version-update:semver-major"]
         update-types: ["version-update:semver-major"]
     groups:
       next-ecosystem:
