@@ -15,7 +15,11 @@ const PREFIX = "cf1:";
 
 function toBase64Url(input: string): string {
   const b64 = Buffer.from(input, "utf8").toString("base64");
-  return b64.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  const replaced = b64.replace(/\+/g, "-").replace(/\//g, "_");
+  // Trim trailing '=' padding without a backtracking-prone regex.
+  let end = replaced.length;
+  while (end > 0 && replaced.charCodeAt(end - 1) === 61 /* '=' */) end -= 1;
+  return replaced.slice(0, end);
 }
 
 function fromBase64Url(input: string): string {
